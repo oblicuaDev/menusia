@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menús IA</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="Styles.css">
+    <!-- Other resources -->
+</head>
+<body>
+    <script src="Script.js">
+    </script>
+    <header >
+        <h1>
+            Header Bilingual
+        </h1>
+    </header>
+    <main>
+        <section id="actionButtons">
+            <h2 class="titulo">FoodAi, menús de comidas en segundos</h2>
+            <div class="contenedor-botones">
+                <a href="#" class="link-volver">Volver al Portal Miembros</a>
+                <div class="contador-menu">
+                    <span class="icono-informacion">ℹ️</span>
+                    <span class="texto-contador">Menús restantes: <span id="contador">5</span></span>
+                </div>
+            </div>
+            <button class="boton-generar">Generar nuevo menú semanal</button>
+            <div id="popup" class="popup">
+                <div class="popup-contenido">
+                    <!-- Contenido del popup -->
+                    <p>¿Para qué edad quieres generar tu menú?</p>
+                    <button class="tarjeta" id="opcion1">
+                        Infantes 3-11 meses
+                    </button>
+                    <button class="tarjeta" id="opcion2">
+                        
+                        Toddlers de 1-2 años
+                    </button>
+                    <button class="tarjeta" id="opcion3">
+                        +2 años
+                    </button>
+                    <button id="cerrar-popup" class="boton-cerrar">Generar menú semanal</button>
+                </div>
+            </div>
+        </section> 
+        <section id="filtros">        
+            <div class="seccion-filtros">
+                <div class="filtro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19.5 3.75H4.5C4.08579 3.75 3.75 4.08579 3.75 4.5V19.5C3.75 19.9142 4.08579 20.25 4.5 20.25H19.5C19.9142 20.25 20.25 19.9142 20.25 19.5V4.5C20.25 4.08579 19.9142 3.75 19.5 3.75Z" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.5 2.25V5.25" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.5 2.25V5.25" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.75 8.25H20.25" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.625 12H11.25L9.75 13.875C9.99686 13.8746 10.24 13.9351 10.4579 14.0512C10.6757 14.1672 10.8616 14.3353 10.999 14.5404C11.1363 14.7455 11.2209 14.9814 11.2453 15.2271C11.2696 15.4727 11.2329 15.7206 11.1385 15.9487C11.0441 16.1768 10.8949 16.378 10.704 16.5346C10.5132 16.6912 10.2866 16.7983 10.0445 16.8463C9.80236 16.8944 9.5521 16.8819 9.31593 16.81C9.07976 16.7382 8.86497 16.6091 8.69062 16.4344" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5 13.125L15 12V16.875" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    <label></label>
+                    <select title="Selecciona una opción" >
+                        <option value="opcion1">Todas</option>
+                        <option value="opcion2">Opción 1</option>
+                        <option value="opcion3">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+                </div>
+                <div class="filtro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75C7.44365 3.75 3.75 7.44365 3.75 12C3.75 16.5563 7.44365 20.25 12 20.25C16.5563 20.25 20.25 16.5563 20.25 12C20.25 7.44365 16.5563 3.75 12 3.75ZM2.25 12C2.25 6.61522 6.61522 2.25 12 2.25C17.3848 2.25 21.75 6.61522 21.75 12C21.75 17.3848 17.3848 21.75 12 21.75C6.61522 21.75 2.25 17.3848 2.25 12Z" fill="#434495"/>
+                        <path d="M8.625 13.125C9.24632 13.125 9.75 12.6213 9.75 12C9.75 11.3787 9.24632 10.875 8.625 10.875C8.00368 10.875 7.5 11.3787 7.5 12C7.5 12.6213 8.00368 13.125 8.625 13.125Z" fill="#434495"/>
+                        <path d="M15.375 13.125C15.9963 13.125 16.5 12.6213 16.5 12C16.5 11.3787 15.9963 10.875 15.375 10.875C14.7537 10.875 14.25 11.3787 14.25 12C14.25 12.6213 14.7537 13.125 15.375 13.125Z" fill="#434495"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.89088 15.3351C9.12003 14.99 9.58552 14.8961 9.93057 15.1252C10.5439 15.5325 11.2638 15.7498 12 15.7498C12.7363 15.7498 13.4562 15.5325 14.0695 15.1252C14.4145 14.8961 14.88 14.99 15.1092 15.3351C15.3383 15.6801 15.2444 16.1456 14.8993 16.3748C14.0401 16.9454 13.0315 17.2498 12 17.2498C10.9685 17.2498 9.95998 16.9454 9.10072 16.3748C8.75567 16.1456 8.66172 15.6801 8.89088 15.3351Z" fill="#434495"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.4685 2.41435C12.792 2.6731 12.8444 3.14507 12.5857 3.46852C11.9128 4.30957 11.5785 5.14779 11.4122 5.77137C11.329 6.0831 11.2884 6.33953 11.2686 6.51289C11.2587 6.59945 11.254 6.66491 11.2519 6.70571C11.2508 6.7261 11.2503 6.74029 11.2501 6.74783L11.25 6.75308C11.2508 6.95088 11.3297 7.1404 11.4697 7.28033C11.6103 7.42098 11.8011 7.5 12 7.5C12.1989 7.5 12.3897 7.42098 12.5303 7.28033C12.671 7.13967 12.75 6.94891 12.75 6.75C12.75 6.33578 13.0858 6 13.5 6C13.9142 6 14.25 6.33578 14.25 6.75C14.25 7.34673 14.0129 7.91903 13.591 8.34099C13.169 8.76294 12.5967 9 12 9C11.4033 9 10.831 8.76294 10.409 8.34099C9.98705 7.91903 9.75 7.34673 9.75 6.75H10.5C9.75 6.75 9.75 6.7497 9.75 6.74939L9.75 6.74874L9.75 6.7473L9.75002 6.74391L9.75011 6.73504L9.75062 6.70913C9.75115 6.68829 9.75215 6.66037 9.75399 6.62583C9.75768 6.55677 9.76474 6.46109 9.77829 6.34257C9.80535 6.10578 9.85845 5.77627 9.96282 5.38488C10.1715 4.6022 10.5872 3.56542 11.4143 2.53148C11.6731 2.20803 12.1451 2.15559 12.4685 2.41435Z" fill="#434495"/>
+                      </svg>
+                    <label>Edades:</label>
+                    <select title="Selecciona una opción">
+                        <option value="opcion1">Todas</option>
+                        <option value="opcion2">Opción 1</option>
+                        <option value="opcion3">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="seccion-lista">
+                    <table class="tabla-elementos">
+                        <thead>
+                            <tr>
+                                <th id="iconoMenu"></th>
+                                <th id="tituloMenu"></th>
+                                <th>Fecha</th>
+                                <th>Edad</th>
+                                <th>Generado</th>
+                                <th id="botonVer"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" viewBox="0 0 35 36" fill="none">
+                                        <rect x="0.5" y="1" width="34" height="34" rx="17" fill="#E370F5" stroke="white"/>
+                                        <path d="M12.875 9.5V13.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12.875 17.375V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.5 9.5L16.25 14C16.25 14.8951 15.8944 15.7535 15.2615 16.3865C14.6285 17.0194 13.7701 17.375 12.875 17.375C11.9799 17.375 11.1214 17.0194 10.4885 16.3865C9.85558 15.7535 9.5 14.8951 9.5 14L10.25 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24.125 21.5H18.875C18.875 21.5 20 11 24.125 9.5V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                </td>
+                                <td>Menú infantes</td>
+                                <td>18 al 22 de Sep</td>
+                                <td>Infantes</td>
+                                <td>Hace 3 horas</td>
+                                <td class="button-column">
+                                    <button class="button-ver">
+                                        Ver menú
+                                        <span> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                <path d="M6.5 3.5L11.5 8.5L6.5 13.5" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </svg>
+                                        </span>
+                                    </button>                         
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" viewBox="0 0 35 36" fill="none">
+                                        <rect x="0.5" y="1" width="34" height="34" rx="17" fill="#70CBE8" stroke="white"/>
+                                        <path d="M12.875 9.5V13.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12.875 17.375V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.5 9.5L16.25 14C16.25 14.8951 15.8944 15.7535 15.2615 16.3865C14.6285 17.0194 13.7701 17.375 12.875 17.375C11.9799 17.375 11.1214 17.0194 10.4885 16.3865C9.85558 15.7535 9.5 14.8951 9.5 14L10.25 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24.125 21.5H18.875C18.875 21.5 20 11 24.125 9.5V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                </td>
+                                <td>Menú toddlers</td>
+                                <td>21 al 25 de Ago</td>
+                                <td>Toddlers</td>
+                                <td>Hace 3 horas</td>
+                                <td class="button-column">
+                                    <button class="button-ver">
+                                        Ver menú
+                                        <span> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                <path d="M6.5 3.5L11.5 8.5L6.5 13.5" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </svg>
+                                        </span>
+                                    </button>     
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" viewBox="0 0 35 36" fill="none">
+                                        <rect x="0.5" y="1" width="34" height="34" rx="17" fill="#FAAE3B" stroke="white"/>
+                                        <path d="M12.875 9.5V13.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12.875 17.375V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.5 9.5L16.25 14C16.25 14.8951 15.8944 15.7535 15.2615 16.3865C14.6285 17.0194 13.7701 17.375 12.875 17.375C11.9799 17.375 11.1214 17.0194 10.4885 16.3865C9.85558 15.7535 9.5 14.8951 9.5 14L10.25 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24.125 21.5H18.875C18.875 21.5 20 11 24.125 9.5V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                </td>
+                                <td>Menú +2 años</td>
+                                <td>21 al 25 de Ago</td>
+                                <td>+2 Años</td>
+                                <td>Hace 3 horas</td>
+                                <td class="button-column">
+                                    <button class="button-ver">
+                                        Ver menú
+                                        <span> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                <path d="M6.5 3.5L11.5 8.5L6.5 13.5" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </svg>
+                                        </span>
+                                    </button>       
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="36" viewBox="0 0 35 36" fill="none">
+                                        <rect x="0.5" y="1" width="34" height="34" rx="17" fill="#70CBE8" stroke="white"/>
+                                        <path d="M12.875 9.5V13.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12.875 17.375V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15.5 9.5L16.25 14C16.25 14.8951 15.8944 15.7535 15.2615 16.3865C14.6285 17.0194 13.7701 17.375 12.875 17.375C11.9799 17.375 11.1214 17.0194 10.4885 16.3865C9.85558 15.7535 9.5 14.8951 9.5 14L10.25 9.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24.125 21.5H18.875C18.875 21.5 20 11 24.125 9.5V27.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                </td>
+                                <td>Menú toddlers</td>
+                                <td>21 al 25 de Ago</td>
+                                <td>Toddlers</td>
+                                <td>Hace 3 horas</td>
+                                <td class="button-column">
+                                    <button class="button-ver">
+                                        Ver menú
+                                        <span> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                <path d="M6.5 3.5L11.5 8.5L6.5 13.5" stroke="#434495" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </svg>
+                                        </span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </section>
+         
+    </main>
+    <footer >
+        <p>Footer Bilingual</p>
+    </footer>
+</body>
+</html>
